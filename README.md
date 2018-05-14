@@ -74,3 +74,7 @@ We use [SemVer](http://semver.org/) for versioning.
 ## License
 
 This project is licensed under the ISC license.
+
+## To do
+
+* Unit tests
