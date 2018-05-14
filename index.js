@@ -10,7 +10,7 @@ module.exports = {
 // takes userId
 function getFeed(userId) {
   const url = `https://www.goodreads.com/user/updates_rss/${userId}`;
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     https.get(url, (res) => {
       const parser = new feedme(true);
       res.pipe(parser);
