@@ -19,15 +19,6 @@ function getFeed(userId) {
       });
     });
   });
-  
-  // return new Promise((resolve, reject) => {
-  //   request.get(url, (err, res, body) => {
-  //     if(  err  ) {
-  //       return reject(err);
-  //     }
-  //     return resolve(body);
-  //   });
-  // });
 }
 
 function getStatusUpdates(userId) {
