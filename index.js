@@ -32,5 +32,5 @@ function getFeed(userId) {
 
 function getStatusUpdates(userId) {
   return getFeed(userId)
-  .then(feed=>feed.items.filter(item=>!~item.guid.text.search('UserStatus')))
+  .then(feed=>feed.items.filter(item=>~item.guid.text.search('UserStatus')))
 }
