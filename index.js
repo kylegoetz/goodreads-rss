@@ -21,6 +21,10 @@ function getFeed(userId) {
   });
 }
 
+function getReviews(userId) {
+  return _getByType(userId, 'Review');
+}
+
 function getStatusUpdates(userId) {
   return _getByType(userId, 'UserStatus');
 }
