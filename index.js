@@ -3,9 +3,10 @@ const https = require('https');
 
 module.exports = {
   getFeed,
+  getReviews,
   getStatusUpdates,
+  getWantToRead,
 };
-
 
 // takes userId
 function getFeed(userId) {
