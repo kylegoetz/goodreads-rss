@@ -22,6 +22,8 @@ function getFeed(userId) {
 }
 
 function getStatusUpdates(userId) {
+function _getByType(userId, type) {
   return getFeed(userId)
-  .then(feed=>feed.items.filter(item=>~item.guid.text.search('UserStatus')))
+  .then(feed=>feed.items.filter(item=>~item.guid.text.search(type)));
+}
 }
