@@ -6,6 +6,7 @@ module.exports = {
   getReviews,
   getStatusUpdates,
   getWantToRead,
+  since,
 };
 
 // takes userId
@@ -37,4 +38,18 @@ function getWantToRead(userId) {
 function _getByType(userId, type) {
   return getFeed(userId)
   .then(feed=>feed.items.filter(item=>~item.guid.text.search(type)));
+}
+
+/*
+ Used as utility fn to generate a callback to send to promise
+ returned by above. Filters out items not newer than given date.
+ Accepts date as any form that the Date() constructor accepts
+ Example: getStatusUpdates().then(since(new Date()))
+*/
+function since(date) {
+  return (feed) => {
+    const items = feed.items
+      .filter(item=>new Date(item.pubdate) > new Date(date));
+    return Object.assign({}, feed, {items});
+  };
 }
