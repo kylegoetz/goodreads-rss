@@ -75,6 +75,11 @@ We use [SemVer](http://semver.org/) for versioning.
 
 This project is licensed under the ISC license.
 
+## Changelog
+
+*1.1.1* - There was a typo-caused major bug from 1.1 in a util function that would not
+return the right value. REALLY need to implement some unit tests to avoid this type of regression.
+
 ## To do
 
 * Unit tests
