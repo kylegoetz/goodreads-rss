@@ -37,7 +37,10 @@ function getWantToRead(userId) {
 
 function _getByType(userId, type) {
   return getFeed(userId)
-  .then(feed=>feed.items.filter(item=>~item.guid.text.search(type)));
+  .then((feed)=>{
+    feed.items = feed.items.filter(item=>~item.guid.text.search(type));
+    return feed;
+  });
 }
 
 /*
